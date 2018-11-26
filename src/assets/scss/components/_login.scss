@@ -3,16 +3,14 @@
     min-height: 100%;
     background-size: cover;
     background-color: #fff;
-}
-
-.login-logo {
-    height: 100px;
-    display: block;
-    margin: 0 auto;
-    margin-bottom: 10px;
-}
-
-.login-title {
-    margin: 20px 0 30px;
-    text-align: center;
+    &-logo {
+        height: 100px;
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 10px;
+    }
+    &-title {
+        margin: 20px 0 30px;
+        text-align: center;
+    }
 }

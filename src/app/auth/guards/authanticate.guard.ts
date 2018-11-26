@@ -16,7 +16,6 @@ export class AuthanticateGuard implements CanActivate {
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): boolean {
-    debugger;
     this.isLogged = JSON.parse(localStorage.getItem('isLogged'));
 
     if (!!this.isLogged) {

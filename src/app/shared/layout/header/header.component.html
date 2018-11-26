@@ -1,22 +1,19 @@
-<nav class="container-fluid left-250 bg-light">
+<div class="header" [ngClass]="{'toggleSidenav': sideNavToggle }">
   <div class="row">
     <div class="col-md-6">
-      <i class="header-burger fa fa-bars"></i>
+      <i class="header-burger fa fa-bars" (click)="toggleSidenav()"></i>
+      {{sideNavToggle}}
     </div>
     <div class="col-md-6">
       <div class="float-right header-user">
         <img class="header-avatar" src="http://d3tubktjmbabhw.cloudfront.net/0c0f2211-8165-4108-a506-3979ba343ebd/b4a79a78-8af0-4fa0-b42a-916eb03fdf5b.jpg">
-        <span class="header-name" (click)="logOut()">John Winter</span>
         <div ngbDropdown class="d-inline-block">
-          <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Toggle dropdown</button>
+          <span class="header-name" id="dropdownBasic1" ngbDropdownToggle>John Winter </span>
           <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-            <button class="dropdown-item">Action - 1</button>
-            <button class="dropdown-item">Another Action</button>
-            <button class="dropdown-item">Something else is here</button>
+            <button class="dropdown-item" (click)="logOut()">LogOut</button>
           </div>
         </div>
-        <i class="header-arrow fa fa-caret-down"></i>
       </div>
     </div>
   </div>
-</nav>
+</div>

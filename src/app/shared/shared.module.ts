@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { LayoutModule } from './layout/layout.module';
+import { SharedService } from './services/shared.service';
 
 
 const DECLARATIONS = [
@@ -7,7 +8,7 @@ const DECLARATIONS = [
 ];
 
 const SERVICES = [
-
+    SharedService
 ];
 
 const MODULES = [

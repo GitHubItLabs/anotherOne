@@ -5,7 +5,8 @@ import { PageComponent } from './page/page.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { RouterModule } from '@angular/router';
 import { PublicComponent } from './public/public.component';
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CommonModule } from '@angular/common';
 
 const DECLARATIONS = [
     HeaderComponent,
@@ -20,7 +21,9 @@ const SERVICES = [
 ];
 
 const MODULES = [
+    CommonModule,
     RouterModule,
+    NgbModule
 ]
 
 

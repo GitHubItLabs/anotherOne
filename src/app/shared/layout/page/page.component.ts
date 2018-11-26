@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SharedService } from '../../services/shared.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'page',
@@ -6,10 +8,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./page.component.scss']
 })
 export class PageComponent implements OnInit {
-
-  constructor() { }
+  subscription: Subscription;
+  sideNavToggle: any;
+  
+  constructor(
+    private sharedService: SharedService
+  ) { }
 
   ngOnInit() {
+    this.subscription = this.sharedService.getSideNav().subscribe(res => {
+      debugger;
+      this.sideNavToggle = res;
+    })
   }
 
 }

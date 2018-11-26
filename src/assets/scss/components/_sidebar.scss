@@ -5,16 +5,17 @@
     left: 0;
     width: 250px;
     overflow: hidden;
+    transition: all 300ms ease-in;
+    background-color: $fill-color;
+    &.toggleSidenav {
+        transform: translateX(-250px);
+    }
+    & .active {
+        background-color: darken($fill-color, 3);
+    }
 }
+
 
 .navbar-brand {
-    padding: 12px;
-}
-
-.sidebar.bg-light {
-    background-color: darken(#f8f9fa, 3%) !important;
-}
-
-.active {
-    background-color: darken(#f8f9fa, 15%);
+    padding: 15px 13px;
 }
