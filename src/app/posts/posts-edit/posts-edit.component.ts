@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-posts-edit',
@@ -6,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./posts-edit.component.scss']
 })
 export class PostsEditComponent implements OnInit {
-
-  constructor() { }
+  edit: boolean;
+  
+  constructor(
+    private activatedRoute: ActivatedRoute
+  ) { }
 
   ngOnInit() {
+    debugger;
+    let pero = this.activatedRoute.snapshot.params.mode;
+    pero == 'edit' ? this.edit = true : this.edit = false;
   }
 
 }

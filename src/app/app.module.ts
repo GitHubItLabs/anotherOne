@@ -10,15 +10,13 @@ import { SharedModule } from './shared/shared.module';
 import { LoginModule } from './auth/login/login.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
-import { PostsEditComponent } from './posts/posts-edit/posts-edit.component';
-import { PostsComponent } from './posts/posts.component';
+import { PostModule } from './posts/post.module';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    PostsEditComponent,
-    PostsComponent,
   ],
   imports: [
     BrowserModule,
@@ -27,9 +25,11 @@ import { PostsComponent } from './posts/posts.component';
     NgbModule,
     HomeModule,
     SharedModule,
+    PostModule,
     LoginModule,
     BrowserAnimationsModule, // required animations module
-    ToastrModule.forRoot() // ToastrModule added
+    ToastrModule.forRoot(), // ToastrModule added
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

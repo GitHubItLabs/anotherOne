@@ -7,13 +7,15 @@ import { RouterModule } from '@angular/router';
 import { PublicComponent } from './public/public.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CommonModule } from '@angular/common';
+import { HeadingComponent } from './heading/heading.component';
 
 const DECLARATIONS = [
     HeaderComponent,
+    HeadingComponent,
     SecureComponent,
     PageComponent,
     SidebarComponent,
-    PublicComponent
+    PublicComponent,
 ];
 
 const SERVICES = [

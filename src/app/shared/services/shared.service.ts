@@ -12,7 +12,6 @@ export class SharedService {
 
   setSideNav(value){
     this.sideNavOpen.next(value);
-    console.log('sideNavOpen', this.sideNavOpen);
   } 
 
   getSideNav() {

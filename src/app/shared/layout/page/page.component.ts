@@ -17,7 +17,6 @@ export class PageComponent implements OnInit {
 
   ngOnInit() {
     this.subscription = this.sharedService.getSideNav().subscribe(res => {
-      debugger;
       this.sideNavToggle = res;
     })
   }

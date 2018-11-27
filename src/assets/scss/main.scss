@@ -1,5 +1,4 @@
-// regular style toast
-
+@import 'settings/';
 // regular style toast 
 @import '~ngx-toastr/toastr.css';
  
@@ -8,7 +7,6 @@
 @import '~bootstrap/scss/bootstrap';
 
 
-@import 'settings/';
 @import 'elements/';
 @import 'tools/';
 @import 'components/';

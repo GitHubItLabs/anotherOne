@@ -12,26 +12,24 @@ export class HeaderComponent implements OnInit {
   subscription: Subscription;
   sideNavToggle: any;
 
-    constructor(
+  constructor(
     private router: Router,
     private sharedService: SharedService,
   ) { }
 
   ngOnInit() {
     this.subscription = this.sharedService.getSideNav().subscribe(res => {
-      debugger;
       this.sideNavToggle = res;
-      }
+    }
     )
   }
 
-  logOut(){
+  logOut() {
     localStorage.removeItem('isLogged');
     this.router.navigate(['/login']);
   }
 
-  toggleSidenav(){
-    debugger;
+  toggleSidenav() {
     this.sideNavToggle = !this.sideNavToggle;
     this.sharedService.setSideNav(this.sideNavToggle);
   }

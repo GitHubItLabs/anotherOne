@@ -1,3 +1,25 @@
-<p>
-  posts works!
-</p>
+<!-- (ok)="okSme($event)" -->
+<heading title="Posts">
+    <button class="btn btn-primary heading-btn" [routerLink]="['/posts', 'add']">Add post</button>
+</heading>
+
+<page>
+  <table class="table table-hover mt-5">
+    <thead>
+      <tr class="thead-dark">
+        <th scope="col">Id</th>
+        <th scope="col">UserID</th>
+        <th scope="col">Title</th>
+        <th scope="col">Content</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of posts">
+        <td scope="row">{{item.id}}</td>
+        <td>{{item.userId}}</td>
+        <td>{{item.title}}</td>
+        <td>{{item.body}}</td>
+      </tr>
+    </tbody>
+  </table>
+</page>
