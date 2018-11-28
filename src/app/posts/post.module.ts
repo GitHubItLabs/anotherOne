@@ -3,7 +3,6 @@ import { PostsComponent } from './posts.component';
 import { PostsEditComponent } from './posts-edit/posts-edit.component';
 import { PostService } from './services/post.service';
 import { SharedModule } from '../shared/shared.module';
-import { CommonModule } from '@angular/common';
 import { PostsRoutingModule } from './posts-routing.module';
 
 const DECLARATIONS = [
@@ -17,7 +16,6 @@ const SERVICES = [
 
 const MODULES = [
     SharedModule,
-    CommonModule,
     PostsRoutingModule
 ]
 

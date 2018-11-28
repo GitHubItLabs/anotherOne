@@ -4,13 +4,14 @@
 </heading>
 
 <page>
-  <table class="table table-hover mt-5">
+  <table class="table table-hover">
     <thead>
       <tr class="thead-dark">
         <th scope="col">Id</th>
         <th scope="col">UserID</th>
         <th scope="col">Title</th>
         <th scope="col">Content</th>
+        <th scope="col">Edit</th>
       </tr>
     </thead>
     <tbody>
@@ -19,6 +20,9 @@
         <td>{{item.userId}}</td>
         <td>{{item.title}}</td>
         <td>{{item.body}}</td>
+        <td>
+          <span [routerLink]="['/posts', 'edit', item.id]">edit</span>
+        </td>
       </tr>
     </tbody>
   </table>

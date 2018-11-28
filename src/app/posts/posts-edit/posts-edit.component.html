@@ -1,33 +1,28 @@
 <!-- (ok)="okSme($event)" -->
 <heading [title]="(edit == true) ? 'Edit post' : 'Add new post'">
+  <button class="btn btn-success heading-btn" (click)="submit()" [disabled]="!addPostForm.valid">Add post</button>
   <button class="btn btn-secondary heading-btn" [routerLink]="['/posts']">Cancel</button>
 </heading>
 
 <page>
-  <table class="table table-hover mt-5">
-    <thead>
-      <tr class="thead-dark">
-        <th scope="col">Id</th>
-        <th scope="col">UserID</th>
-        <th scope="col">Title</th>
-        <th scope="col">Content</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td scope="row">
-          <input class="form-control" name="add-id" placeholder="Add Id" type="text">
-          </td>
-          <td>
-            <input class="form-control" name="userId" placeholder="UserID" type="text">
-          </td>
-          <td>
-            <input class="form-control" name="title" placeholder="Title" type="text">
-          </td>
-          <td>
-            <input class="form-control" name="content" placeholder="Content" type="text">
-          </td>
-      </tr>
-    </tbody>
-  </table>
+  <p>Please add User ID, Title and Content for the post.</p>
+  <form [formGroup]="addPostForm" *ngIf="!loading">
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="form-group">
+          <input formControlName="userId" class="form-control" name="userId" placeholder="User ID" type="text">
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="form-group">
+          <input formControlName="title" class="form-control" name="title" placeholder="Title" type="text">
+        </div>
+      </div>
+      <div class="col-sm-12">
+        <div class="form-group">
+          <textarea class="form-control" name="" id="" cols="30" rows="10" formControlName="body"></textarea>
+        </div>
+      </div>
+    </div>
+  </form>
 </page>
