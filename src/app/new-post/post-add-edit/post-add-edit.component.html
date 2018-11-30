@@ -1,0 +1,28 @@
+<!-- (ok)="okSme($event)" -->
+<heading [title]="(edit == true) ? 'Edit new post' : 'Add new post'">
+  <button class="btn btn-success heading-btn" (click)="submit()" [disabled]="!addPostForm.valid">Submit</button>
+  <button class="btn btn-secondary heading-btn" [routerLink]="['/new-post']">Cancel</button>
+</heading>
+
+<page>
+  <p>Please add User ID, Title and Content for the post.</p>
+  <form [formGroup]="addPostForm" *ngIf="!loading">
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="form-group">
+          <input formControlName="userId" class="form-control" name="userId" placeholder="User ID" type="text">
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="form-group">
+          <input formControlName="title" class="form-control" name="title" placeholder="Title" type="text">
+        </div>
+      </div>
+      <div class="col-sm-12">
+        <div class="form-group">
+          <textarea formControlName="body" class="form-control" name="body" cols="30" rows="10"></textarea>
+        </div>
+      </div>
+    </div>
+  </form>
+</page>

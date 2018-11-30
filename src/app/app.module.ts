@@ -13,6 +13,8 @@ import { ToastrModule } from 'ngx-toastr';
 import { PostModule } from './posts/post.module';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { NewPostModule } from './new-post/new-post.module';
+import { UploadModule } from './upload/upload.module';
 
 
 @NgModule({
@@ -27,12 +29,14 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     HomeModule,
     SharedModule,
     PostModule,
+    NewPostModule,
     LoginModule,
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot(), // ToastrModule added
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    UploadModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -25,7 +25,7 @@ const SERVICES = [
 const MODULES = [
     CommonModule,
     RouterModule,
-    NgbModule
+    NgbModule,
 ]
 
 

@@ -6,6 +6,8 @@ import { LoginComponent } from './auth/login/login.component';
 import { PublicComponent } from './shared/layout/public/public.component';
 import { AuthanticateGuard } from './auth/guards/authanticate.guard';
 import { postsRoutes } from './posts/posts-routing.module';
+import { newPostRoutes } from './new-post/new-post-routing.module';
+import { UploadComponent } from './upload/upload.component';
 
 export const PUBLIC_ROUTES: Routes= [
   { path: '', component: LoginComponent },
@@ -14,6 +16,8 @@ export const PUBLIC_ROUTES: Routes= [
 
 export const SECURE_ROUTES: Routes = [
   { path: 'home', component: HomeComponent },
+  { path: 'upload', component: UploadComponent },
+  ...newPostRoutes,
   ...postsRoutes
 ];
 

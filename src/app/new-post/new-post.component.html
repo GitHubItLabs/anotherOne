@@ -1,7 +1,5 @@
-<!-- (ok)="okSme($event)" -->
-<heading title="Posts">
-  <button class="btn btn-outline-primary heading-btn">Modal</button>
-  <button class="btn btn-primary heading-btn" [routerLink]="['/posts', 'add']">Add post</button>
+<heading title="New Posts">
+  <button class="btn btn-primary heading-btn" [routerLink]="['/new-post', 'add']">Add new post</button>
 </heading>
 
 <page>
@@ -16,13 +14,13 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let item of posts">
+      <tr *ngFor="let item of newPost">
         <td scope="row">{{item.id}}</td>
         <td>{{item.userId}}</td>
         <td>{{item.title}}</td>
         <td>{{item.body}}</td>
         <td>
-          <span [routerLink]="['/posts', 'edit', item.id]">
+          <span [routerLink]="['/new-post', 'edit', item.id]">
             <i class="fa fa-pencil edit-pencil hover" aria-hidden="true"></i>
           </span>
         </td>

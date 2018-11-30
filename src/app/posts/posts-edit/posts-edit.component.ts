@@ -31,7 +31,7 @@ export class PostsEditComponent implements OnInit {
 
     if (this.edit) {
       this.getOnePost();
-    } 
+    }
   }
 
   getOnePost() {

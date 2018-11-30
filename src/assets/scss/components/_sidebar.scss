@@ -11,6 +11,7 @@
     & .active {
         background-color: darken($fill-color, 5);
         border-left: 5px solid $primary-color;
+        color: darken($primary-color, 10);
     }
 }
 
