@@ -1,15 +1,15 @@
 <ng-template #modalEden let-modal>
   <div class="modal-header">
-    <h4 class="modal-title" id="modal-basic-title">Delete Post</h4>
+    <h4 class="modal-title" id="modal-basic-title">Delete Post ID {{currentId}}</h4>
     <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
   <div class="modal-body">
-    <h3>Some Modal Text</h3>
+    <p>Please confirm if you want to delete the post with ID <b>{{currentId}}</b> and title <b>"{{currentTitle}}"</b></p>
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-outline-dark" (click)="modal.dismiss()">Cancel</button>
-    <button type="button" class="btn btn-outline-dark" (click)="modal.close()">Save</button>
+    <button type="button" class="btn btn-outline-primary" (click)="modal.dismiss()">Cancel</button>
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close()">Confirm</button>
   </div>
 </ng-template>

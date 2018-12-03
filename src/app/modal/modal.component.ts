@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Output, EventEmitter, Input } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
@@ -8,6 +8,8 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 })
 export class ModalComponent implements OnInit {
   closeResult: string;
+  currentId: string;
+  currentTitle: string;
 
   @Output() submit = new EventEmitter<any>();
   @ViewChild('modalEden') dialogTemplate: ElementRef;
@@ -20,17 +22,18 @@ export class ModalComponent implements OnInit {
 
   }
 
-  open(id) {
+  open(item) {
     debugger;
-    console.log(id);
-    return this.modalService.open(this.dialogTemplate,{
-        ariaLabelledBy: 'modal-basic-title',
-      }).result.then((close) => {
-        console.log('close');
-        this.submit.emit(id);
-      }, (dismiss) => {
-        console.log('dismiss')
-      });
+    this.currentTitle = item.title;
+    this.currentId = item.id;
+    return this.modalService.open(this.dialogTemplate, {
+      ariaLabelledBy: 'modal-basic-title',
+    }).result.then((close) => {
+      console.log('close');
+      this.submit.emit(item.id);
+    }, (dismiss) => {
+      console.log('dismiss')
+    });
   }
 
 }
