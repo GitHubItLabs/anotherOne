@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { PostService } from './services/post.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'posts',
@@ -8,6 +9,7 @@ import { PostService } from './services/post.service';
 })
 export class PostsComponent implements OnInit {
   posts: any = [];
+
 
   constructor(
     private postService: PostService
@@ -23,7 +25,12 @@ export class PostsComponent implements OnInit {
     })
   }
 
-  okSme(pero) {
-    console.log(pero)
+  delete(id) {
+    this.postService.deletePost(id).subscribe(res => {
+      this.getAll();
+      
+    })
+
   }
+
 }

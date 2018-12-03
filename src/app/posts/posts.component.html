@@ -1,6 +1,5 @@
 <!-- (ok)="okSme($event)" -->
 <heading title="Posts">
-  <button class="btn btn-outline-primary heading-btn">Modal</button>
   <button class="btn btn-primary heading-btn" [routerLink]="['/posts', 'add']">Add post</button>
 </heading>
 
@@ -8,16 +7,17 @@
   <table class="table table-hover">
     <thead>
       <tr class="thead-dark">
-        <th scope="col">Id</th>
-        <th scope="col">UserID</th>
-        <th scope="col">Title</th>
-        <th scope="col">Content</th>
-        <th scope="col">Edit</th>
+        <th>Id</th>
+        <th>UserID</th>
+        <th>Title</th>
+        <th>Content</th>
+        <th>Edit</th>
+        <th>Delete</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let item of posts">
-        <td scope="row">{{item.id}}</td>
+        <td>{{item.id}}</td>
         <td>{{item.userId}}</td>
         <td>{{item.title}}</td>
         <td>{{item.body}}</td>
@@ -26,7 +26,12 @@
             <i class="fa fa-pencil edit-pencil hover" aria-hidden="true"></i>
           </span>
         </td>
+        <td>
+          <button class="btn btn-sm btn-danger" (click)="modalEden.open(item.id)">Delete</button>
+        </td>
       </tr>
     </tbody>
   </table>
 </page>
+
+<modal #modalEden (submit)="delete($event)"></modal>

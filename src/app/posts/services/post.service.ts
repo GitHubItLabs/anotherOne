@@ -14,6 +14,7 @@ export class PostService {
     return this.http.get(this.endpoint + '/posts');
   }
 
+  // PUT	/posts/1
   getPost(id) {
     // return this.http.get(this.endpoint + '/posts/' + id);
     return this.http.get(this.endpoint + `/posts/${id}`);
@@ -21,5 +22,10 @@ export class PostService {
 
   addNewPost(data) {
     return this.http.post(this.endpoint + '/posts', data);
+  }
+
+  // DELETE	/posts/1
+  deletePost(id){
+    return this.http.delete(this.endpoint + `/post/${id}`);
   }
 }

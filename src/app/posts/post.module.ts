@@ -4,6 +4,7 @@ import { PostsEditComponent } from './posts-edit/posts-edit.component';
 import { PostService } from './services/post.service';
 import { SharedModule } from '../shared/shared.module';
 import { PostsRoutingModule } from './posts-routing.module';
+import { ModalModule } from '../modal/modal.module';
 
 const DECLARATIONS = [
     PostsComponent,
@@ -16,7 +17,8 @@ const SERVICES = [
 
 const MODULES = [
     SharedModule,
-    PostsRoutingModule
+    PostsRoutingModule,
+    ModalModule
 ]
 
 
