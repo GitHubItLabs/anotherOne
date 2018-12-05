@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef, Output, EventEmitter, Input } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Output, EventEmitter } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
@@ -12,7 +12,7 @@ export class ModalComponent implements OnInit {
   currentTitle: string;
 
   @Output() submit = new EventEmitter<any>();
-  @ViewChild('modalEden') dialogTemplate: ElementRef;
+  @ViewChild('modalSingle') dialogTemplate: ElementRef;
 
   constructor(
     private modalService: NgbModal
@@ -23,7 +23,6 @@ export class ModalComponent implements OnInit {
   }
 
   open(item) {
-    debugger;
     this.currentTitle = item.title;
     this.currentId = item.id;
     return this.modalService.open(this.dialogTemplate, {

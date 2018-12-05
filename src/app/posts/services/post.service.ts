@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable()
 export class PostService {
-  endpoint = `https://jsonplaceholder.typicode.com`;
+  endpoint = `${environment.endpoint}`;
 
   constructor(
     private http: HttpClient
@@ -26,6 +27,7 @@ export class PostService {
 
   // DELETE	/posts/1
   deletePost(id){
-    return this.http.delete(this.endpoint + `/post/${id}`);
+    return this.http.delete(this.endpoint + `/post/${id}`, {params: id});
+    // return this.http.delete(this.endpoint + `/post/${id}`, { params: { id }});
   }
 }

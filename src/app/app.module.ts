@@ -15,6 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { NewPostModule } from './new-post/new-post.module';
 import { UploadModule } from './upload/upload.module';
+import { UserModule } from './user/user.module';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { UploadModule } from './upload/upload.module';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    UploadModule
+    UploadModule,
+    UserModule
   ],
   providers: [],
   bootstrap: [AppComponent]

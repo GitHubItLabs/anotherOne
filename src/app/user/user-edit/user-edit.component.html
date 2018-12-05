@@ -1,0 +1,36 @@
+<heading title="Add New User">
+  <button class="btn btn-primary heading-btn" [routerLink]="['/users']">Go Back</button>
+</heading>
+<page>
+  <div class="row">
+    <div class="col-9">
+      <div class="row form-group">
+        <div class="col-md-6">
+          <input type="text" class="form-control" placeholder="First name">
+        </div>
+        <div class="col-md-6">
+          <input type="text" class="form-control" placeholder="Last name">
+        </div>
+      </div>
+      <div class="row form-group">
+        <div class="col-12">
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="4" placeholder="Biography"></textarea>
+        </div>
+      </div>
+    </div>
+    <div class="col-3">
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="..." [(ngModel)]="interest">
+        <button class="btn btn-success rounded-0" (click)="addInterest()" [disabled]="!interest">Add new</button>
+      </div>
+      <ul class="list-group">
+        <li class="list-group-item bg-light" *ngFor="let item of array">
+          {{item}}
+          <button type="button" class="close" aria-label="Close" (click)="deleteInterest()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</page>

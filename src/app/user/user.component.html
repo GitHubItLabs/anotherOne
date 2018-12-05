@@ -1,0 +1,34 @@
+<heading title="Users">
+  <button class="btn btn-primary heading-btn" [routerLink]="['/users', 'add-user']">Add New User</button>
+</heading>
+<page>
+  <!-- <input type="text" [(ngModel)]="input">
+  <p>{{input}}</p> -->
+
+  <div class="row">
+    <div class="col-lg-4" *ngFor="let item of users">
+      <div class="card">
+        <img 
+          class="card-img-top" 
+          src="{{item.avatar}}"
+          alt="Avatar" 
+          [ngClass]="{'loadingImg': !item.avatar}">
+        <div class="card-body">
+          <h5 class="card-title">{{item.firstName}} {{item.lastName}}</h5>
+          <p class="text-muted mb-0">Date of Birth: </p>
+          <p>{{item.dateOfBirth}}</p>
+          <p class="card-text">{{ (item.bio | slice:0:100) + '...'}}</p>
+
+          <p class="mb-0">Intrestes:</p>
+          <p class="badge badge-dark badge-pill mr-1" *ngFor="let interest of item.intrestes">
+            {{interest}}
+          </p>
+          
+        </div>
+        <div class="card-footer">
+          <a href="#" class="btn btn-primary float-right">Edit</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</page>

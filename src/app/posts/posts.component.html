@@ -1,4 +1,3 @@
-<!-- (ok)="okSme($event)" -->
 <heading title="Posts">
   <button class="btn btn-primary heading-btn" [routerLink]="['/posts', 'add']">Add post</button>
 </heading>
@@ -27,11 +26,11 @@
           </span>
         </td>
         <td>
-          <button class="btn btn-sm btn-danger" (click)="modalEden.open(item)">Delete</button>
+          <button class="btn btn-sm btn-danger" (click)="modalSingle.open(item)">Delete</button>
         </td>
       </tr>
     </tbody>
   </table>
 </page>
 
-<modal #modalEden (submit)="delete($event)"></modal>
+<modal #modalSingle (submit)="delete($event)"></modal>

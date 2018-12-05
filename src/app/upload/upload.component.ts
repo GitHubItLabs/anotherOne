@@ -11,12 +11,10 @@ export class UploadComponent implements OnInit {
   selectedFile = null;
 
   fileSelected(event) {
-    debugger;
     this.selectedFile = event.target.files[0];
   }
 
   onUpload() {
-    debugger;
     const fd = new FormData();
     fd.append('image', this.selectedFile, this.selectedFile.name);
     this.http.post(this.endpoint, fd).subscribe(res => {

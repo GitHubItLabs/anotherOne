@@ -8,6 +8,7 @@ import { AuthanticateGuard } from './auth/guards/authanticate.guard';
 import { postsRoutes } from './posts/posts-routing.module';
 import { newPostRoutes } from './new-post/new-post-routing.module';
 import { UploadComponent } from './upload/upload.component';
+import { userRoutes } from './user/user-routing.module';
 
 export const PUBLIC_ROUTES: Routes= [
   { path: '', component: LoginComponent },
@@ -17,6 +18,7 @@ export const PUBLIC_ROUTES: Routes= [
 export const SECURE_ROUTES: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'upload', component: UploadComponent },
+  ...userRoutes,
   ...newPostRoutes,
   ...postsRoutes
 ];
