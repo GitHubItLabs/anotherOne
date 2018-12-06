@@ -13,4 +13,13 @@ export class UserService {
   getUsers() {
     return this.http.get(this.endpoint + '/users');
   }
+
+  addNewUser(data) {
+    return this.http.post(this.endpoint + '/users', data);
+  }
+
+  editUser(id) {
+    return this.http.get(this.endpoint + `/users/${id}`);
+  }
+
 }

@@ -10,7 +10,7 @@ export class UserComponent implements OnInit {
   users: any = [];
 
   constructor(
-    private userService: UserService,
+    private userService: UserService
   ) { }
 
   ngOnInit() {

@@ -6,27 +6,23 @@
   <p>{{input}}</p> -->
 
   <div class="row">
-    <div class="col-lg-4" *ngFor="let item of users">
+    <div class="col-lg-4" *ngFor="let item of users; let idx = index">
       <div class="card">
-        <img 
-          class="card-img-top" 
-          src="{{item.avatar}}"
-          alt="Avatar" 
-          [ngClass]="{'loadingImg': !item.avatar}">
+        <a [routerLink]="['/users', 'edit', item.id]">
+          <img class="card-img-top" src="{{item.avatar}}" alt="Avatar" [ngClass]="{'loadingImg': !item.avatar}">
+        </a>
         <div class="card-body">
           <h5 class="card-title">{{item.firstName}} {{item.lastName}}</h5>
           <p class="text-muted mb-0">Date of Birth: </p>
           <p>{{item.dateOfBirth}}</p>
           <p class="card-text">{{ (item.bio | slice:0:100) + '...'}}</p>
-
           <p class="mb-0">Intrestes:</p>
           <p class="badge badge-dark badge-pill mr-1" *ngFor="let interest of item.intrestes">
             {{interest}}
           </p>
-          
         </div>
         <div class="card-footer">
-          <a href="#" class="btn btn-primary float-right">Edit</a>
+          <a href="#" class="btn btn-primary float-right" [routerLink]="['/users', 'edit', item.id]">Edit</a>
         </div>
       </div>
     </div>

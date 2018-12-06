@@ -26,7 +26,7 @@ export class PostsEditComponent implements OnInit {
   ngOnInit() {
     this.id = this.activatedRoute.snapshot.params.id;
     let state = this.activatedRoute.snapshot.params.mode;
-    state == 'edit' ? this.edit = true : this.edit = false;
+    state == 'edit' ? this.edit = true : this.edit = false; 
     this.buildForm();
 
     if (this.edit) {
@@ -35,6 +35,7 @@ export class PostsEditComponent implements OnInit {
   }
 
   getOnePost() {
+    debugger;
     this.postService.getPost(this.id).subscribe(res => {
       this.post = res;
       this.buildForm(this.post);

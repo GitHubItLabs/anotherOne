@@ -616,7 +616,8 @@
     ],
     "users": [
         {
-            "avatar": "https://source.unsplash.com/user/erondu/250x250",
+            "id": 0,
+            "avatar": "https://picsum.photos/200/200?v=54",
             "firstName": "Nikola",
             "lastName": "Kuzmanovski",
             "dateOfBirth": "21.08.1992",
@@ -630,7 +631,8 @@
             ]
         },
         {
-            "avatar": "https://source.unsplash.com/user/erondu/250x250",
+            "id": 1,
+            "avatar": "https://picsum.photos/200/200?v=29",
             "firstName": "Marko",
             "lastName": "Danailov",
             "dateOfBirth": "02.05.1988",
@@ -644,7 +646,8 @@
             ]
         },
         {
-            "avatar": "https://source.unsplash.com/user/erondu/250x250",
+            "id": 2,
+            "avatar": "https://picsum.photos/200/200?v=64",
             "firstName": "Nenad",
             "lastName": "Zdravskovski",
             "dateOfBirth": "32.13.1963",
